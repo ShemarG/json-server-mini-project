@@ -2,45 +2,41 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Fetch Mini Project</title>
+    <title>FakeSteam</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="index.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="header">
-      <img
-        src="https://fontmeme.com/permalink/180719/67429e6afec53d21d64643101c43f029.png"
-        alt="header"
-      />
-    </div>
-
-    <div class="container">
-      <form class="add-form">
-        <h3>Create a toy!</h3>
+    <header>
+      <h1>FAKE STEAM WISHLIST</h1>
+    </header>
+    <section class="add-game-section">
+      <form id="add-game">
+        <h3>Add a game</h3>
 
         <input
           type="text"
           name="name"
           value=""
-          placeholder="Enter a toy's name..."
+          placeholder="Enter the game's title..."
           class="input-text"
         />
-        <br />
+
         <input
           type="text"
           name="image"
           value=""
-          placeholder="Enter a toy's image URL..."
+          placeholder="Enter an image URL for the game..."
           class="input-text"
         />
-        <br />
         <input
           type="submit"
           name="submit"
-          value="Create New Toy"
+          value="Add to wishlist"
           class="submit"
         />
       </form>
-    </div>
+    </section>
 
     <div id="collection">
       <div class="card">
