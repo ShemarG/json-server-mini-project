@@ -24,6 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       imgUrl: 'https://outriders.square-enix-games.com/static/188f535406586f2cf8ca273662f2151a/metadata.jpg',
       dateAdded: '3/1/2021',
       releaseDate: '4/1/2021'
-    }
+    },
   ));
 });

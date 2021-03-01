@@ -1,27 +1,35 @@
 {
-    "toys" : []
+    "games" : []
 }
 {
-    "toys": [
+    "games": [
         {
             "id": 1,
             "name": "Outriders",
             "image": "https://en.wikipedia.org/wiki/Outriders_(video_game)#/media/File:Outriders_cover_art.jpg",
+            "Release Date" : "04/01/2021",
+            "Date Added": "03/01/2021"
         },
         {
             "id": 2,
             "name": "Gorn",
             "image": "https://images.thedigitalfix.com/img/4/2020/05/gorn-1140x641.jpeg.webp",
+            "Release Date" : "07/18/2019",
+            "Date Added": "03/01/2021"
         },
         {
             "id": 3,
             "name": "Sea of Thieves",
             "image": "https://s2.gaming-cdn.com/images/products/967/271x377/sea-of-thieves-pc-xbox-one-cover.jpg",
+            "Release Date" : "03/20/2018",
+            "Date Added": "03/01/2021"
         },
         {
             "id": 4,
             "name": "Dying Light",
             "image": "https://cdn.akamai.steamstatic.com/steam/apps/239140/header_alt_assets_16.jpg?t=1614609376",
+            "Release Date" : "01/26/2015",
+            "Date Added": "03/01/2021"
         } 
     ]
 }
@@ -35,27 +43,3 @@
 
 
 
-
-
-
-
-{
-    "id": 1,
-    "name": "Outriders",
-    "image": "https://en.wikipedia.org/wiki/Outriders_(video_game)#/media/File:Outriders_cover_art.jpg",
-  },
-  {
-    "id": 2,
-    "name": "Gorn",
-    "image": "https://images.thedigitalfix.com/img/4/2020/05/gorn-1140x641.jpeg.webp",
-  },
-  {
-    "id": 3,
-    "name": "Sea of Thieves",
-    "image": "https://s2.gaming-cdn.com/images/products/967/271x377/sea-of-thieves-pc-xbox-one-cover.jpg",
-  },
-  {
-    "id": 4,
-    "name": "Dying Light",
-    "image": "https://cdn.akamai.steamstatic.com/steam/apps/239140/header_alt_assets_16.jpg?t=1614609376",
-  } 
