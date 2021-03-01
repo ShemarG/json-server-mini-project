@@ -1,7 +1,7 @@
 function createCard(data) {
   const container = document.createElement('article');
   container.classList.add('card');
-  const title = document.createElement('h4');
+  const title = document.createElement('h2');
   title.textContent = data.name;
   const img = document.createElement('img');
   img.src = data.imgUrl;

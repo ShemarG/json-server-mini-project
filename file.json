@@ -1,7 +1,10 @@
 {
+<<<<<<< HEAD
     "games" : []
 }
 {
+=======
+>>>>>>> ae29eb65506921286b1c2cf2e2d9e96f258ca046
     "games": [
         {
             "id": 1,
@@ -28,12 +31,15 @@
             "id": 4,
             "name": "Dying Light",
             "image": "https://cdn.akamai.steamstatic.com/steam/apps/239140/header_alt_assets_16.jpg?t=1614609376",
+<<<<<<< HEAD
             "Release Date" : "01/26/2015",
             "Date Added": "03/01/2021"
         } 
+=======
+        }
+>>>>>>> ae29eb65506921286b1c2cf2e2d9e96f258ca046
     ]
 }
-  
 
 
 
@@ -43,3 +49,31 @@
 
 
 
+
+<<<<<<< HEAD
+=======
+
+
+
+
+{
+    "id": 1,
+    "name": "Outriders",
+    "image": "https://en.wikipedia.org/wiki/Outriders_(video_game)#/media/File:Outriders_cover_art.jpg",
+  },
+  {
+    "id": 2,
+    "name": "Gorn",
+    "image": "https://images.thedigitalfix.com/img/4/2020/05/gorn-1140x641.jpeg.webp",
+  },
+  {
+    "id": 3,
+    "name": "Sea of Thieves",
+    "image": "https://s2.gaming-cdn.com/images/products/967/271x377/sea-of-thieves-pc-xbox-one-cover.jpg",
+  },
+  {
+    "id": 4,
+    "name": "Dying Light",
+    "image": "https://cdn.akamai.steamstatic.com/steam/apps/239140/header_alt_assets_16.jpg?t=1614609376",
+  }
+>>>>>>> ae29eb65506921286b1c2cf2e2d9e96f258ca046
