@@ -16,18 +16,35 @@ function createCard(data) {
   released.textContent = `Released: ${data.releaseDate}`;
   lowerSection.append(added, released, deleteButton);
   container.append(title, fig, lowerSection);
+
+  deleteButton.addEventListener("click", function(e){
+    document.dispatchEvent(new CustomEvent('deleteCard', {
+      detail: {
+        id: data.id,
+        el: container
+      }
+    }))
+  })
   return container;
 }
 
+function handleDelete(id, el){
+  console.log(el)
+  el.remove()
+  fetch(`http://localhost:3000/games/${id}`,{
+  method: 'DELETE'
+  })
+
+  .then(res => console.log(res))
+  .catch(err => {
+    console.log(err)
+  })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  // document.body.append(createCard(
-  //   {
-  //     name: 'Outriders',
-  //     imgUrl: 'https://outriders.square-enix-games.com/static/188f535406586f2cf8ca273662f2151a/metadata.jpg',
-  //     dateAdded: '3/1/2021',
-  //     releaseDate: '4/1/2021'
-  //   },
-  // ));
+  document.addEventListener("deleteCard", function(e){
+    handleDelete(e.detail.id, e.detail.el)
+  })
   fetch('http://localhost:3000/games')
     .then((res) => res.json())
     .then((data) => {
@@ -37,9 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
           name: data[i].name,
           imgUrl: data[i].image,
           dateAdded: data[i].dateAdded,
-          releaseDate: data[i].releaseDate
+          releaseDate: data[i].releaseDate,
+          id: data[i].id
         });
         document.body.append(card);
       }
     });
 });
+
