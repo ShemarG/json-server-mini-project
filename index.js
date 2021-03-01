@@ -18,14 +18,28 @@ function createCard(data) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.append(createCard(
-    {
-      name: 'Outriders',
-      imgUrl: 'https://outriders.square-enix-games.com/static/188f535406586f2cf8ca273662f2151a/metadata.jpg',
-      dateAdded: '3/1/2021',
-      releaseDate: '4/1/2021'
-    },
-  ));
+  // document.body.append(createCard(
+  //   {
+  //     name: 'Outriders',
+  //     imgUrl: 'https://outriders.square-enix-games.com/static/188f535406586f2cf8ca273662f2151a/metadata.jpg',
+  //     dateAdded: '3/1/2021',
+  //     releaseDate: '4/1/2021'
+  //   },
+  // ));
+  fetch('http://localhost:3000/games')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+    for(let i = 0; i < data.length; i++) {
+      const card = createCard( {
+        name: data[i].name,
+        imgUrl: data[i].image,
+        dateAdded: data[i].dateAdded,
+        releaseDate: data[i].releaseDate
+      })
+      document.body.append(card)
+    }
+  })
 });
 
-fetch()
+
