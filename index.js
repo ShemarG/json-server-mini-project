@@ -17,39 +17,70 @@ function createCard(data) {
   lowerSection.append(added, released, deleteButton);
   container.append(title, fig, lowerSection);
 
-  deleteButton.addEventListener("click", function(e){
-    document.dispatchEvent(new CustomEvent('deleteCard', {
-      detail: {
-        id: data.id,
-        el: container
-      }
-    }))
-  })
+  deleteButton.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('deleteCard', { detail: { id: data.id, el: container } }));
+  });
   return container;
 }
 
-function handleDelete(id, el){
-  console.log(el)
-  el.remove()
-  fetch(`http://localhost:3000/games/${id}`,{
-  method: 'DELETE'
-  })
-
-  .then(res => console.log(res))
-  .catch(err => {
-    console.log(err)
-  })
+function handleDelete(id, el) {
+  el.remove();
+  fetch(`http://localhost:3000/games/${id}`, { method: 'DELETE' });
 }
 
+function handleAdd(title, url, release) {
+  const payload = {
+    name: title,
+    image: url,
+    releaseDate: release,
+    dateAdded: new Date().toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' })
+  };
+
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  };
+
+  fetch('http://localhost:3000/games', options)
+    .then((resp) => resp.json())
+    .then((data) => {
+      const card = createCard({
+        name: title,
+        imgUrl: url,
+        dateAdded: payload.dateAdded,
+        releaseDate: release,
+        id: data.id
+      });
+      document.getElementById('items').append(card);
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener("deleteCard", function(e){
-    handleDelete(e.detail.id, e.detail.el)
-  })
+  // Handles when "remove" is clicked
+  document.addEventListener('deleteCard', (e) => {
+    handleDelete(e.detail.id, e.detail.el);
+  });
+
+  // Handles when "Add to wishlist is clicked"
+
+  document.getElementById('add-game').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = e.currentTarget.querySelector('#game-title').value;
+    const url = e.currentTarget.querySelector('#game-img-url').value;
+    let release = e.currentTarget.querySelector('#game-release-date').value;
+    if (!release) {
+      release = '???';
+    } else {
+      release = release.replaceAll('-', '/');
+    }
+    handleAdd(title, url, release);
+  });
+
+  // Initial fetch
   fetch('http://localhost:3000/games')
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i += 1) {
         const card = createCard({
           name: data[i].name,
           imgUrl: data[i].image,
@@ -57,8 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
           releaseDate: data[i].releaseDate,
           id: data[i].id
         });
-        document.body.append(card);
+        document.getElementById('items').append(card);
       }
     });
 });
-

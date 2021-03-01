@@ -13,15 +13,15 @@
     <section class="add-game-section">
       <form id="add-game">
         <h3>Add a game</h3>
-
-
         <input
+          id="game-title"
           type="text"
           name="name"
           value=""
           class="input-text"
         />
         <input
+          id="game-img-url"
           type="text"
           name="image"
           value=""
@@ -29,7 +29,7 @@
           class="input-text"
         />
         <span>When was this game released?</span>
-        <input type="date">
+        <input type="date" id="game-release-date">
         <input
           type="submit"
           name="submit"
@@ -38,13 +38,8 @@
         />
       </form>
     </section>
-
-    <!-- <div id="collection">
-      <div class="card">
-        <h2>Rex</h2>
-        <img alt="Rex" src="http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png" class="avatar" />
-        <button class="btn">Remove</button>
-      </div> -->
-    </div>
+    <section id="items">
+      
+    </section>
   </body>
 </html>

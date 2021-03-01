@@ -19,6 +19,10 @@ header {
   flex-direction: column;
 }
 
+#items {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 #collection {
   margin: 2em;
