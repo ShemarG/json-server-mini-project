@@ -3,8 +3,10 @@ function createCard(data) {
   container.classList.add('card');
   const title = document.createElement('h2');
   title.textContent = data.name;
+  const fig = document.createElement('figure');
   const img = document.createElement('img');
   img.src = data.imgUrl;
+  fig.append(img);
   const lowerSection = document.createElement('div');
   const added = document.createElement('span');
   added.textContent = `Added: ${data.dateAdded}`;
@@ -13,7 +15,7 @@ function createCard(data) {
   deleteButton.textContent = 'Remove';
   released.textContent = `Released: ${data.releaseDate}`;
   lowerSection.append(added, released, deleteButton);
-  container.append(title, img, lowerSection);
+  container.append(title, fig, lowerSection);
   return container;
 }
 
