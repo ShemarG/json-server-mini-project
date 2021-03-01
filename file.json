@@ -1,5 +1,6 @@
 {
-	"games": [{
+	"games": [
+        {
 			"id": 1,
 			"name": "Outriders",
 			"image": "https://store-images.s-microsoft.com/image/apps.27615.14046750508470899.609d15d4-43a5-4cf7-8be2-72479c220fc9.a29294ab-59c9-477f-b711-1b37cf534923?mode=scale&q=90&h=300&w=200",
@@ -26,14 +27,5 @@
 		}
 
 	]
-
 }
-
-
-
-
-
-
-
-
 

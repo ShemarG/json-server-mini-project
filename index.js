@@ -27,19 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
   //   },
   // ));
   fetch('http://localhost:3000/games')
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-    for(let i = 0; i < data.length; i++) {
-      const card = createCard( {
-        name: data[i].name,
-        imgUrl: data[i].image,
-        dateAdded: data[i].dateAdded,
-        releaseDate: data[i].releaseDate
-      })
-      document.body.append(card)
-    }
-  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        const card = createCard({
+          name: data[i].name,
+          imgUrl: data[i].image,
+          dateAdded: data[i].dateAdded,
+          releaseDate: data[i].releaseDate
+        });
+        document.body.append(card);
+      }
+    });
 });
-
-
